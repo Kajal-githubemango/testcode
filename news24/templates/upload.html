@@ -14,7 +14,12 @@
     <h1>Publish News</h1>
 </div>
 
-
+ 
+{% for i in  sp %}
+{{i.title}}kkk
+{{i.image}}
+ 
+{% endfor %}
 <!-- Contact Start -->
 <div class="contact">
     <div class="container-fluid">
@@ -65,7 +70,8 @@
   </form>
 </div>
 
-
+  
+    
     
 <!-- Contact End -->
 {% include 'footer.html' %}

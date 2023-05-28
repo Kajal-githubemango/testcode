@@ -1,57 +1,48 @@
 {% include 'base.html' %}
 {% load static %}
 
-
         <!-- Top News Start-->
         <div class="top-news">
             <div class="container-fluid">
+                
+                {% for i  in page %}
+                
+                {% if forloop.first %}
                 <div class="row">
-                    
-                        
                     <div class="col-md-6 tn-left">
                         <div class="tn-img">
-                            
-                            
-                            {% for i in page %}
-                            
-                            {% if forloop.first %}
-                            <img src="/media/{{post.image}}" class="card-img" alt="...">
+                            <img src="/media/{{i.image}}" class="card-img" alt="...">
                             <div class="tn-content">
                                 <div class="tn-content-inner">
-                                    <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                    <a class="tn-title" href="">{{i.title}}</a>
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
+                                    <a class="tn-title" href="">{{i.details}}</a>
                                 </div>
                             </div>
-                            {% endif %}
-                                
-                           
-                            {% endfor %}
-                                
-                           
-                            
-                                
-                            
-                            <!-- <img src="img/top-news-1.jpg" /> -->
-                            
                         </div>
-                    </div>
+                    </div> 
+                {% endif %}
+                {% endfor %}
+                    
+                
                     <div class="col-md-6 tn-right">
                         <div class="row">
+                            
                             {% for i in page %}
-                            <div class="col-md-6 tn-left">
+                            <div class="col-md-6">
                                 <div class="tn-img">
                                     <img src="/media/{{i.image}}" class="card-img" alt="...">
-                                    <!-- <img src="img/top-news-1.jpg" /> -->
                                     <div class="tn-content">
                                         <div class="tn-content-inner">
                                             <a class="tn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
-                                            <a class="tn-title" href="">{{i.details}}</a>
+                                            <a class="tn-title" href="">{{i.title}}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             {% endfor %}
                                 
+                           
+                            
                         </div>
                     </div>
                 </div>
@@ -68,57 +59,26 @@
                         <h2><i class="fas fa-align-justify"></i>Sports</h2>
                         <div class="row cn-slider">
                             
-
                             {% for i in page %}
-                            
-                            {% if page.objects.filter(category='Sports').values() %}
-
+                            {% if i.category == "Sports" %}
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-1.jpg' %}">
-
-                                    <!-- <img src="img/cat-news-1.jpg" /> -->
+                                    <img src="/media/{{i.image}}">
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
-                                            <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="cn-title" href="">I didn’t fight my way to the top of the food chain to be a vegetarian.</a>
+                                            <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
+                                            <a class="cn-title" href="">{{i.title}}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            
                             {% endif %}
-                                
-                           
                             {% endfor %}
-
-
-
-
-
-
+                                
+                            
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-1.jpg' %}">
-
-                                    <!-- <img src="img/cat-news-1.jpg" /> -->
-                                    <div class="cn-content">
-                                        <div class="cn-content-inner">
-                                            <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="cn-title" href="">I didn’t fight my way to the top of the food chain to be a vegetarian.</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <div class="col-md-6">
-                                <div class="cn-img">
-                                    <!-- <img src="img/cat-news-2.jpg" /> -->
-                                    <img src="{% static 'img/cat-news-2.jpg' %}">
+                                    <img src="img/cat-news-2.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -130,8 +90,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-3.jpg' %}">
-                                    <!-- <img src="img/cat-news-3.jpg" /> -->
+                                    <img src="img/cat-news-3.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -147,8 +106,7 @@
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-4.jpg' %}">
-                                    <!-- <img src="img/cat-news-4.jpg" /> -->
+                                    <img src="img/cat-news-4.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -161,9 +119,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <!-- <img src="img/cat-news-5.jpg" /> -->
-                                    <img src="{% static 'img/cat-news-5.jpg' %}">
-                                    
+                                    <img src="img/cat-news-5.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -174,9 +130,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <!-- <img src="img/cat-news-6.jpg" /> -->
-                                    <img src="{% static 'img/cat-news-6.jpg' %}">
-
+                                    <img src="img/cat-news-6.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -202,8 +156,7 @@ Is anyone going to put anything funny on here?</a>
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-7.jpg' %}">
-                                    <!-- <img src="img/cat-news-7.jpg" /> -->
+                                    <img src="img/cat-news-7.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -214,9 +167,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-8.jpg' %}">
-
-                                    <!-- <img src="img/cat-news-8.jpg" /> -->
+                                    <img src="img/cat-news-8.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -227,8 +178,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <!-- <img src="img/cat-news-9.jpg" /> -->
-                                    <img src="{% static 'img/cat-news-9.jpg' %}">
+                                    <img src="img/cat-news-9.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -244,9 +194,7 @@ Is anyone going to put anything funny on here?</a>
                         <div class="row cn-slider">
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-10.jpg' %}">
-
-                                    <!-- <img src="img/cat-news-10.jpg" /> -->
+                                    <img src="img/cat-news-10.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -257,9 +205,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <!-- <img src="img/cat-news-11.jpg" /> -->
-                                    <img src="{% static 'img/cat-news-11.jpg' %}">
-
+                                    <img src="img/cat-news-11.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -270,8 +216,7 @@ Is anyone going to put anything funny on here?</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-12.jpg' %}">
-                                    <!-- <img src="img/cat-news-12.jpg" /> -->
+                                    <img src="img/cat-news-12.jpg" />
                                     <div class="cn-content">
                                         <div class="cn-content-inner">
                                             <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
@@ -299,8 +244,7 @@ Is anyone going to put anything funny on here?</a>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="mn-img">
-                                            <img src="{% static 'img/latest-news.jpg' %}">
-                                            <!-- <img src="img/latest-news.jpg" /> -->
+                                            <img src="img/latest-news.jpg" />
                                         </div>
                                         <div class="mn-content">
                                             <a class="mn-title" href="">Ukraine pushes Russian forces back, restricts gas flow to Europe.</a>
@@ -312,8 +256,7 @@ Is anyone going to put anything funny on here?</a>
                                     <div class="col-lg-6">
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/latest-news.jpg' %}">
-                                                <!-- <img src="img/latest-news.jpg" /> -->
+                                                <img src="img/latest-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Supreme Court freezes sedition law; No fresh cases till government review is ready.</a>
@@ -322,8 +265,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/latest-news.jpg' %}">
-                                                <!-- <img src="img/latest-news.jpg" /> -->
+                                                <img src="img/latest-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Donald Trump must pay $110K, meet conditions to end contempt: Judge</a>
@@ -332,8 +274,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <!-- <img src="img/latest-news.jpg" /> -->
-                                                <img src="{% static 'img/latest-news.jpg' %}">
+                                                <img src="img/latest-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Devraj Lahiri to head ITC's cigarette business.</a>
@@ -342,8 +283,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/latest-news.jpg' %}">
-                                                <!-- <img src="img/latest-news.jpg" /> -->
+                                                <img src="img/latest-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Bharat Forge share price down 3.66 per cent.</a>
@@ -352,8 +292,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/latest-news.jpg' %}">
-                                                <!-- <img src="img/latest-news.jpg" /> -->
+                                                <img src="img/latest-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Rajiv Kumar appointed next CEC, to assume charge on May 15.</a>
@@ -368,8 +307,7 @@ Is anyone going to put anything funny on here?</a>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="mn-img">
-                                            <!-- <img src="img/popular-news.jpg" /> -->
-                                            <img src="{% static 'img/popular-news.jpg' %}">
+                                            <img src="img/popular-news.jpg" />
                                         </div>
                                         <div class="mn-content">
                                             <a class="mn-title" href="">NSE scam: CBI to file supplementary chargesheet soon.</a>
@@ -383,8 +321,7 @@ Is anyone going to put anything funny on here?</a>
                                     <div class="col-lg-6">
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/popular-news.jpg' %}">
-                                                <!-- <img src="img/popular-news.jpg" /> -->
+                                                <img src="img/popular-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Twixor set to power conversational banking</a>
@@ -393,8 +330,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/img/popular-news.jpg' %}">
-                                                <!-- <img src="img/popular-news.jpg" /> -->
+                                                <img src="img/popular-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Shriram Trans Fin share price down 4.97 per cent</a>
@@ -403,9 +339,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <!-- <img src="img/popular-news.jpg" /> -->
-                                                <img src="{% static 'img/popular-news.jpg' %}">
-
+                                                <img src="img/popular-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Federal Bank declines 6.12% as Sensex slides</a>
@@ -414,8 +348,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/popular-news.jpg' %}">
-                                                <!-- <img src="img/popular-news.jpg" /> -->
+                                                <img src="img/popular-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Aliquam condimentum metus</a>
@@ -424,8 +357,7 @@ Is anyone going to put anything funny on here?</a>
                                         </div>
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="{% static 'img/popular-news.jpg' %}">
-                                                <!-- <img src="img/popular-news.jpg" /> -->
+                                                <img src="img/popular-news.jpg" />
                                             </div>
                                             <div class="mn-content">
                                                 <a class="mn-title" href="">Shares of Adani Green fall as Nifty drops</a>
@@ -478,10 +410,7 @@ Is anyone going to put anything funny on here?</a>
                             <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Ads 1 column</h2>
                                 <div class="image">
-                                    <a href="">
-                                        <!-- <img src="img/adds-1.jpg" alt="Image"> -->
-                                        <img src="{% static 'img/adds-1.jpg' %}" alt="Image">
-                                    </a>
+                                    <a href=""><img src="img/adds-1.jpg" alt="Image"></a>
                                 </div>
                             </div>
 
@@ -490,19 +419,10 @@ Is anyone going to put anything funny on here?</a>
                                 <div class="image">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <a href="">
-
-                                                <img src="{% static 'img/adds-2.jpg' %}" alt="Image">
-                                                <!-- <img src="img/adds-2.jpg" alt="Image"> -->
-                                            
-                                            </a>
+                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
                                         </div>
                                         <div class="col-sm-6">
-                                            
-                                            <a href="">
-                                                <!-- <img src="img/adds-2.jpg" alt="Image"> -->
-                                                <img src="{% static 'img/adds-2.jpg' %}" alt="Image">
-                                            </a>
+                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
                                         </div>
                                     </div>
                                 </div>
@@ -512,5 +432,4 @@ Is anyone going to put anything funny on here?</a>
                 </div>
             </div>
         </div>
-        <!-- Main News End-->
-{% include 'footer.html' %}
+    {% include 'footer.html' %}

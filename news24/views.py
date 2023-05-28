@@ -32,3 +32,4 @@ def uploaddata(request):
         obj.save()
     upload = news.objects.all()
     return render(request, 'upload.html',{"upload": upload})
+
