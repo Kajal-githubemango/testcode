@@ -7,8 +7,8 @@ class contact(models.Model):
    subject= models.CharField(max_length=100, null=True, blank=True) 
    meassage= models.TextField(null=True, blank=True) 
    
-def __str__(self):
-   return self.name
+   def __str__(self):
+      return self.name
 
 martial_status = [
 				('Tech', 'Tech'), 
@@ -19,9 +19,9 @@ class news(models.Model):
    category = models.CharField(max_length=100, choices=martial_status,    null=True, blank=True)
    title= models.CharField(max_length=100, null=True, blank=True) 
    details= models.TextField(null=True, blank=True) 
-   time= models.DateTimeField(max_length=100, null=True, blank=True) 
-   image= models.ImageField(upload_to ='images/', default = timezone.now, null=True, blank=True) 
+   time= models.DateTimeField(default = timezone.now, null=True, blank=True) 
+   image= models.ImageField(upload_to ='images/') 
    
-def __str__(self):
-   return self.category
+   def __str__(self):
+      return self.category
    

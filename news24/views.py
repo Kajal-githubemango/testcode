@@ -21,19 +21,15 @@ def contactlist(request):
     return render(request, 'new.html', {"ct":ct})
 
 def uploaddata(request):
-    martial_status = [
-        ('Tech', 'Tech'),
-        ('Sports', 'Sports'),
-        ('Fashion', 'Fashion'),
-    ]
-    if request.method == 'POST':
+    if "submit1" in request.POST:
+        print("kajal")
         category = request.POST.get('category')
         title = request.POST.get('title')
         details = request.POST.get('details')
-        image = request.FILES.get('images')  
+        image = request.FILES.get('image')  
         
         obj = news(category=category, title=title, details=details, image=image)
         obj.save()
         # categories = list(news.objects.all().values_list('category',flat=True))
         # print(categories, "sdddd")
-    return render(request, 'upload.html', {'martial_status': martial_status})
+    return render(request, 'upload.html')
