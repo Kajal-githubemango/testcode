@@ -18,8 +18,22 @@
         <div class="row align-items-center">
             <div class="col-md-4">
                 
-                {% comment %} <div class="form">
-                   
+                <!-- Example split danger button -->
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-lg">News</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Tech</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Fashion</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Sports</a>
+
+                </div>
+            </div>
+                <!-- <div class="form">
                     <form method="post" action="{% url 'contact' %}">
                     {% csrf_token %}
                         <div class="form-row">
@@ -38,7 +52,8 @@
                         </div>
                         <div><button class="btn" name="submit"type="submit">Send Message</button></div>
                     </form>
-                </div> {% endcomment %}
+                </div>
+                 -->
             </div>
             {% comment %} <div class="col-md-4">
                 <div class="map">
