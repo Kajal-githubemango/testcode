@@ -67,12 +67,6 @@
                     <div class="col-md-6">
                         <h2><i class="fas fa-align-justify"></i>Sports</h2>
                         <div class="row cn-slider">
-                            
-
-                            {% for i in page %}
-                            
-                            {% if page.objects.filter(category='Sports').values() %}
-
                             <div class="col-md-6">
                                 <div class="cn-img">
                                     <img src="{% static 'img/cat-news-1.jpg' %}">
@@ -86,35 +80,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            
-                            {% endif %}
-                                
-                           
-                            {% endfor %}
-
-
-
-
-
-
-                            <div class="col-md-6">
-                                <div class="cn-img">
-                                    <img src="{% static 'img/cat-news-1.jpg' %}">
-
-                                    <!-- <img src="img/cat-news-1.jpg" /> -->
-                                    <div class="cn-content">
-                                        <div class="cn-content-inner">
-                                            <a class="cn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="cn-title" href="">I didn’t fight my way to the top of the food chain to be a vegetarian.</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
                             <div class="col-md-6">
                                 <div class="cn-img">
                                     <!-- <img src="img/cat-news-2.jpg" /> -->

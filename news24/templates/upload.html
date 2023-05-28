@@ -14,7 +14,8 @@
     <h1>Publish News</h1>
 </div>
 
-
+<form action="{% url 'upload' %}" method="POST">
+  {% csrf_token %}
 <!-- Contact Start -->
 <div class="contact">
     <div class="container-fluid">
@@ -22,9 +23,7 @@
             <div class="col-md-4">
                 <div class="form">
                   
-                  <form action="{% url 'upload' %}"  enctype="multipart/form-data"method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p }}
+                      
                         <label>
                           <span class="fname">Title <span class="required">*</span></span>
                           <input type="text" name="title">
@@ -35,27 +34,37 @@
                           <span>News Detail<span class="required">*</span></span>
                           <textarea name="details">Enter text here...</textarea>
                         </label><br>
-                    </div>
-                    </div>
-                          <div class="col-md-4">
-                      
-                        <label>
-                            <span>Image Upload <span class="required">*</span></span>
-                            <input type="file" id="myFile" name="image">
-                        </label>
-                      </div>
-                    <div class="col-md-4">
-                      <div class="contact-info">
-                        <label for="category">Category:</label>
-                          <select name="category" class="custom-select col-12 col-sm-8">
-                              <option value="Tech">Tech</option>
-                              <option value="Sports">Sports</option>
-                              <option value="Fashion">Fashion</option>
-                          </select>
-                        </label>
-                    </div>
-                    <button type="submit" name="submit1" style="width:100px">Submit </button>
-                  </form>
+                        {% comment %} <label>
+                          <span>Current Date/Time<span class="required">*</span></span>
+                        <input type="datetime-local" value="2017-06-13T13:00" class="date">
+                        </label><br> {% endcomment %}
+                    
+                    
+                    
+                      </form>
+                 </div>
+            </div>
+            <div class="col-md-4">
+                <form>
+                <label>
+                    <span>Image Upload <span class="required">*</span></span>
+                         <input type="file" id="myFile" name="images">
+                       </label>
+                    
+            </div>
+            <div class="col-md-4">
+              <div class="contact-info">
+                <label for="category">Category:</label>
+                    
+                    <select name="category" class="custom-select col-12 col-sm-8">
+                      {% for choice in martial_status %}
+                      <option value="{{ choice.0 }}">{{ choice.1 }}</option>
+                  {% endfor %}
+                    </select>
+                </label>
+            </div>
+            
+                <button type="submit" name="submit1" style="width:100px">Submit </button>
 
                 </div>
             </div>
