@@ -13,5 +13,5 @@ def contactsave(request):
         new_contact = contact(name=name, email=email, subject=subject, meassage=message)
         print(new_contact,"aaa")
         new_contact.save()
-        return render(request, 'contact.html')
+    return render(request, 'contact.html')
 
