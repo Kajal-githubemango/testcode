@@ -1,8 +1,9 @@
 from django.shortcuts import render,redirect
-from .models import contact
+from .models import contact, news
 
 def index(request):
-    return render(request, 'index.html')
+    page = news.objects.all()
+    return render(request, 'index.html', {"page":page})
 
 def contactsave(request):
     if request.method == 'POST':

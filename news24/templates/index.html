@@ -6,6 +6,8 @@
         <div class="top-news">
             <div class="container-fluid">
                 <div class="row">
+                    
+                        
                     <div class="col-md-6 tn-left">
                         <div class="tn-img">
                             <img src="{% static 'img/top-news-1.jpg' %}">
@@ -20,56 +22,21 @@
                     </div>
                     <div class="col-md-6 tn-right">
                         <div class="row">
-                            <div class="col-md-6">
+                            {% for i in page %}
+                            <div class="col-md-6 tn-left">
                                 <div class="tn-img">
-                                    <img src="{% static 'img/top-news-2.jpg' %}">
-                                    <!-- <img src="img/top-news-2.jpg" /> -->
+                                    <img src="/media/{{i.image}}" class="card-img" alt="...">
+                                    <!-- <img src="img/top-news-1.jpg" /> -->
                                     <div class="tn-content">
                                         <div class="tn-content-inner">
-                                            <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="tn-title" href="">Sports</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                            <div class="col-md-6">
-                                <div class="tn-img">
-                                    <img src="{% static 'img/top-news-3.jpg' %}">
-                                    <img src="img/top-news-3.jpg" />
-                                    <div class="tn-content">
-                                        <div class="tn-content-inner">
-                                            <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="tn-title" href="">Business Meeting</a>
+                                            <a class="tn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
+                                            <a class="tn-title" href="">{{i.details}}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
-                                    <img src="{% static 'img/top-news-4.jpg' %}">
-
-                                    <!-- <img src="img/top-news-4.jpg" /> -->
-                                    <div class="tn-content">
-                                        <div class="tn-content-inner">
-                                            <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="tn-title" href="">Business Meeting</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="tn-img">
-                                    <img src="{% static 'img/top-news-5.jpg' %}">
-
-                                    <!-- <img src="img/top-news-5.jpg" /> -->
-                                    <div class="tn-content">
-                                        <div class="tn-content-inner">
-                                            <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <a class="tn-title" href="">Management</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {% endfor %}
+                                
                         </div>
                     </div>
                 </div>
