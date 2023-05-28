@@ -15,3 +15,7 @@ def contactsave(request):
         new_contact.save()
     return render(request, 'contact.html')
 
+def contactlist(request):
+    ct = contact.objects.all()
+    print(ct, "aaaa")
+    return render(request, 'new.html', {"ct":ct})
