@@ -17,7 +17,9 @@
     <div class="container-fluid">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <div class="form">
+                
+                {% comment %} <div class="form">
+                   
                     <form method="post" action="{% url 'contact' %}">
                     {% csrf_token %}
                         <div class="form-row">
@@ -36,13 +38,13 @@
                         </div>
                         <div><button class="btn" name="submit"type="submit">Send Message</button></div>
                     </form>
-                </div>
+                </div> {% endcomment %}
             </div>
-            <div class="col-md-4">
+            {% comment %} <div class="col-md-4">
                 <div class="map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3020.985767636229!2d-73.52689268518203!3d40.78432704112558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c281127307115f%3A0x90d5abaf2f0279de!2sTerry%20Ln%2C%20Jericho%2C%20NY%2011753%2C%20USA!5e0!3m2!1sen!2sbd!4v1580837516748!5m2!1sen!2sbd" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                 </div>
-            </div>
+            </div> {% endcomment %}
             <div class="col-md-4">
                 <div class="contact-info">
                     <h3>Get in Touch</h3>
