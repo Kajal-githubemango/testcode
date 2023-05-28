@@ -24,7 +24,7 @@
                   
                   <form action="{% url 'upload' %}"  enctype="multipart/form-data"method="POST">
                     {% csrf_token %}
-                    {{ form.as_p }}
+                    
                         <label>
                           <span class="fname">Title <span class="required">*</span></span>
                           <input type="text" name="title">
