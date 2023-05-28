@@ -34,13 +34,17 @@ def uploaddata(request):
     return render(request, 'upload.html',{"upload": upload})
 
 def sports(request):
-    return render(request, 'sports.html')
+    page = news.objects.all()
+    return render(request, 'sports.html',{"page":page})
 
 def tech(request):
-    return render(request, 'tech.html')
+    page = news.objects.all()
+    return render(request, 'tech.html',{"page":page})
 
 def fashion(request):
-    return render(request, 'fashion.html')
+    page = news.objects.all()
+    return render(request, 'fashion.html',{"page":page})
 
 def latestnews(request):
-    return render(request, 'news.html')
+    page = news.objects.all()
+    return render(request, 'news.html',{"page":page})
