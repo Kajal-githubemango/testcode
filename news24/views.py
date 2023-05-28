@@ -30,6 +30,6 @@ def uploaddata(request):
         
         obj = news(category=category, title=title, details=details, image=image)
         obj.save()
-        # categories = list(news.objects.all().values_list('category',flat=True))
-        # print(categories, "sdddd")
-    return render(request, 'upload.html')
+    upload = news.objects.all()
+    return render(request, 'upload.html',{"upload": upload})
+
