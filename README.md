@@ -1,4 +1,4 @@
 "# testcode" 
-location:
+<!-- location:
 F:\pythonn\news24\mynews>
-cmd: python manage.py runserver
+cmd: python manage.py runserver -->
