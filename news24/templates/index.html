@@ -10,14 +10,29 @@
                         
                     <div class="col-md-6 tn-left">
                         <div class="tn-img">
-                            <img src="{% static 'img/top-news-1.jpg' %}">
-                            <!-- <img src="img/top-news-1.jpg" /> -->
+                            
+                            
+                            {% for i in page %}
+                            
+                            {% if forloop.first %}
+                            <img src="/media/{{post.image}}" class="card-img" alt="...">
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                    <a class="tn-title" href="">Hard Work Earns Respect and Money.</a>
+                                    <a class="tn-title" href="">{{i.title}}</a>
                                 </div>
                             </div>
+                            {% endif %}
+                                
+                           
+                            {% endfor %}
+                                
+                           
+                            
+                                
+                            
+                            <!-- <img src="img/top-news-1.jpg" /> -->
+                            
                         </div>
                     </div>
                     <div class="col-md-6 tn-right">
