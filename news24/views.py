@@ -19,3 +19,6 @@ def contactlist(request):
     ct = contact.objects.all()
     print(ct, "aaaa")
     return render(request, 'new.html', {"ct":ct})
+
+def uploaddata(request):
+    return render(request, 'upload.html')
