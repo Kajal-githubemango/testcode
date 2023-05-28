@@ -210,65 +210,42 @@
                             <div class="col-md-12">
                                 <h2><i class="fas fa-align-justify"></i>Popular News</h2>
                                 <div class="row">
+                                    {% for i in page %}
+                                    
+                                    {% if forloop.first %}
                                     <div class="col-lg-6">
                                         <div class="mn-img">
-                                            <img src="img/popular-news.jpg" />
+                                            <img src="/media/{{i.image}}" class="card-img" alt="...">
                                         </div>
                                         <div class="mn-content">
-                                            <a class="mn-title" href="">NSE scam: CBI to file supplementary chargesheet soon.</a>
+                                            <a class="mn-title" href="">{{i.title}}</a>
                                             <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            <p>"The probe is still on and it is normal practice to file the charge-sheet in tranches as the probe proceeds,
-											" a person privy to the information told ET on condition of anonymity, adding that there are fresh facts in the 
-											investigation that the agency is still examining.
-</p>
+                                            <p>{{i.details}}</p>
                                         </div>
                                     </div>
+                                    {% endif %}
+                                        
+                                    
+                                    {% endfor %}   
+                                    
                                     <div class="col-lg-6">
+                                        {% for i in page %}
+                                        
+                                       
+                                        {% if i.category == "Sports" %}
                                         <div class="mn-list">
                                             <div class="mn-img">
-                                                <img src="img/popular-news.jpg" />
+                                                <img src="/media/{{i.image}}" class="card-img" alt="...">
                                             </div>
                                             <div class="mn-content">
-                                                <a class="mn-title" href="">Twixor set to power conversational banking</a>
-                                                <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
+                                                <a class="mn-title" href="">{{i.details}}</a>
+                                                <a class="mn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
                                             </div>
                                         </div>
-                                        <div class="mn-list">
-                                            <div class="mn-img">
-                                                <img src="img/popular-news.jpg" />
-                                            </div>
-                                            <div class="mn-content">
-                                                <a class="mn-title" href="">Shriram Trans Fin share price down 4.97 per cent</a>
-                                                <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            </div>
-                                        </div>
-                                        <div class="mn-list">
-                                            <div class="mn-img">
-                                                <img src="img/popular-news.jpg" />
-                                            </div>
-                                            <div class="mn-content">
-                                                <a class="mn-title" href="">Federal Bank declines 6.12% as Sensex slides</a>
-                                                <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            </div>
-                                        </div>
-                                        <div class="mn-list">
-                                            <div class="mn-img">
-                                                <img src="img/popular-news.jpg" />
-                                            </div>
-                                            <div class="mn-content">
-                                                <a class="mn-title" href="">Aliquam condimentum metus</a>
-                                                <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            </div>
-                                        </div>
-                                        <div class="mn-list">
-                                            <div class="mn-img">
-                                                <img src="img/popular-news.jpg" />
-                                            </div>
-                                            <div class="mn-content">
-                                                <a class="mn-title" href="">Shares of Adani Green fall as Nifty drops</a>
-                                                <a class="mn-date" href=""><i class="far fa-clock"></i>12-May-2023</a>
-                                            </div>
-                                        </div>
+                                        {% endif %}
+                                        
+                                        {% endfor %}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -314,8 +291,17 @@
 
                             <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Ads 1 column</h2>
-                                <div class="image">
-                                    <a href=""><img src="img/adds-1.jpg" alt="Image"></a>
+                                    {% for i in page %}
+                                    
+                                    {% if forloop.first %}
+                                    <div class="image">
+                                        <img src="/media/{{i.image}}" alt="image">
+                                    </div>
+                                    {% endif %}
+                                        
+                                   
+                                    {% endfor %}
+                                        
                                 </div>
                             </div>
 
@@ -324,10 +310,18 @@
                                 <div class="image">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
+                                            {% for i in page %}
+                                    
+                                    {% if forloop.first %}
+                                    <img src="/media/{{i.image}}" alt="image">
+                                    
+                                    {% endif %}
+                                        
+                                   
+                                    {% endfor %}
+                                        
                                         </div>
-                                        <div class="col-sm-6">
-                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
+                                        
                                         </div>
                                     </div>
                                 </div>
