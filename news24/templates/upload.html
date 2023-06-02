@@ -4,7 +4,7 @@
 <div class="breadcrumb-wrap">
     <div class="container-fluid">
         <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="">Home</a></li>
             <li class="breadcrumb-item active" href="{% url 'contact' %}">Contact Us</li>
         </ul>
     </div>
@@ -15,11 +15,7 @@
 </div>
 
  
-{% for i in  sp %}
-{{i.title}}
-{{i.image}}
- 
-{% endfor %}
+
 <!-- Contact Start -->
 <div class="contact">
     <div class="container-fluid">
@@ -27,13 +23,9 @@
             <div class="col-md-4">
                 <div class="form">
                   
-<<<<<<< HEAD
-                      
-=======
                   <form action="{% url 'upload' %}"  enctype="multipart/form-data"method="POST">
                     {% csrf_token %}
                     
->>>>>>> 66b960a8d7527e75931436febbd05c8cfd6766ba
                         <label>
                           <span class="fname">Title <span class="required">*</span></span>
                           <input type="text" name="title">
@@ -44,39 +36,6 @@
                           <span>News Detail<span class="required">*</span></span>
                           <textarea name="details"></textarea>
                         </label><br>
-<<<<<<< HEAD
-                        {% comment %} <label>
-                          <span>Current Date/Time<span class="required">*</span></span>
-                        <input type="datetime-local" value="2017-06-13T13:00" class="date">
-                        </label><br> {% endcomment %}
-                    
-                    
-                    
-                      </form>
-                 </div>
-            </div>
-            <div class="col-md-4">
-                <form>
-                <label>
-                    <span>Image Upload <span class="required">*</span></span>
-                         <input type="file" id="myFile" name="images">
-                       </label>
-                    
-            </div>
-            <div class="col-md-4">
-              <div class="contact-info">
-                <label for="category">Category:</label>
-                    
-                    <select name="category" class="custom-select col-12 col-sm-8">
-                      {% for choice in martial_status %}
-                      <option value="{{ choice.0 }}">{{ choice.1 }}</option>
-                  {% endfor %}
-                    </select>
-                </label>
-            </div>
-            
-                <button type="submit" name="submit1" style="width:100px">Submit </button>
-=======
                     </div>
                     </div>
                           <div class="col-md-4">
@@ -103,7 +62,6 @@
                     <button type="submit" name="submit1" style="width:100px">Submit </button>
                   </form>
                   
->>>>>>> 66b960a8d7527e75931436febbd05c8cfd6766ba
 
                 </div>
             </div>

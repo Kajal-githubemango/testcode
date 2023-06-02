@@ -15,7 +15,7 @@
                             <div class="tn-content">
                                 <div class="tn-content-inner">
                                     <a class="tn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
-                                    <a class="tn-title" href="">{{i.details}}</a>
+                                    <a class="tn-title" href="">{{i.title}}</a>
                                 </div>
                             </div>
                         </div>
@@ -28,6 +28,7 @@
                         <div class="row">
                             
                             {% for i in page %}
+                            {% if forloop.counter == 7 %} 
                             <div class="col-md-6">
                                 <div class="tn-img">
                                     <img src="/media/{{i.image}}" class="card-img" alt="...">
@@ -39,6 +40,7 @@
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
                             {% endfor %}
                                 
                            
@@ -60,7 +62,7 @@
                         <div class="row cn-slider">
                             
                             {% for i in page %}
-                            {% if i.category == "Sports" %}
+                            {% if i.category == "Sports" %} 
                             <div class="col-md-6">
                                 <div class="cn-img">
                                     <img src="/media/{{i.image}}" class="card-img" alt="...">
@@ -72,6 +74,7 @@
                                     </div>
                                 </div>
                             </div>
+                            
                             {% endif %}
                             {% endfor %}
                                 
@@ -91,7 +94,7 @@
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
                                         <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.title}}</a>
-                                        <a class="cn-title" href="">I{{i.details}}</a>
+                                        <a class="cn-title" href="">I{{i.time}}</a>
                                     </div>
                                 </div>
                             </div>

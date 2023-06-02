@@ -49,3 +49,6 @@ def fashion(request):
 def latestnews(request):
     page = news.objects.all()
     return render(request, 'news.html' , {"page":page})
+def home(request):
+    page = news.objects.all()
+    return render(request, 'index.html' , {"page":page})
