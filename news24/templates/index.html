@@ -27,7 +27,8 @@
                         <div class="row">
                             
                             {% for i in page %}
-                            {% if forloop.counter == 7 %} 
+                            {% if forloop.counter <= 4 %}
+
                             <div class="col-md-6">
                                 <div class="tn-img">
                                     <img src="/media/{{i.image}}" class="card-img" alt="...">
@@ -122,7 +123,7 @@
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
                                         <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.title}}</a>
-                                        <a class="cn-title" href="">I{{i.details}}</a>
+                                        <a class="cn-title" href="">I{{i.time}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +143,7 @@
                                 <div class="cn-content">
                                     <div class="cn-content-inner">
                                         <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.title}}</a>
-                                        <a class="cn-title" href="">I{{i.details}}</a>
+                                        <a class="cn-title" href="">I{{i.time}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +308,7 @@
                                 </div>
                             </div>
 
-                            <div class="sidebar-widget">
+                            {% comment %} <div class="sidebar-widget">
                                 <h2><i class="fas fa-align-justify"></i>Ads 2 column</h2>
                                 <div class="image">
                                     <div class="row">
@@ -327,7 +328,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                         </div>
                     </div>
                 </div>

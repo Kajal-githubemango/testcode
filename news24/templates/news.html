@@ -2,24 +2,25 @@
 <div class="cat-news">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2><i class="fas fa-align-justify"></i>Sports</h2>
-                <div class="row cn-slider">
-                    
-                    {% for i in page %}
-                    <div class="col-md-6">
-                        <div class="cn-img">
-                            <img src="/media/{{i.image}}" class="card-img" alt="...">
-                            <div class="cn-content">
-                                <div class="cn-content-inner">
-                                    <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
-                                    <a class="cn-title" href="">{{i.title}}</a>
-                                </div>
+            
+            <h2><i class="fas fa-align-justify"></i>News</h2>
+            <div class="row cn-slider">
+                
+                {% for i in page %}
+                {% if forloop.counter <= 12 %}
+                <div class="col-md-4 mt-5">
+                    <div class="cn-img">
+                        <img src="/media/{{i.image}}" class="card-img" alt="...">
+                        <div class="cn-content">
+                            <div class="cn-content-inner">
+                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{i.time}}</a>
+                                <a class="cn-title" href="">{{i.title}}</a>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>

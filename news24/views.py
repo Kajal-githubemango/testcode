@@ -6,7 +6,7 @@ def index(request):
     return render(request, 'index.html', {"page":page})
 
 def contactsave(request):
-    if request.method == 'POST':
+    if "submit" in request.POST:
         name = request.POST.get('name')
         email = request.POST.get('email')
         subject = request.POST.get('subject')
@@ -14,6 +14,8 @@ def contactsave(request):
         new_contact = contact(name=name, email=email, subject=subject, meassage=message)
         print(new_contact,"aaa")
         new_contact.save()
+        new_contact.refresh_from_db()
+        
     return render(request, 'contact.html', )
 def contactlist(request):
     ct = contact.objects.all()
@@ -21,17 +23,17 @@ def contactlist(request):
     return render(request, 'new.html', {"ct":ct})
 
 def uploaddata(request):
-    if "submit1" in request.POST:
-        print("kajal")
-        category = request.POST.get('category')
-        title = request.POST.get('title')
-        details = request.POST.get('details')
-        image = request.FILES.get('image')  
-        
-        obj = news(category=category, title=title, details=details, image=image)
-        obj.save()
-    upload = news.objects.all()
-    return render(request, 'upload.html',{"upload": upload})
+    if request.method =="POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        subject = request.POST["subject"]
+        message = request.POST["message"]
+        obj = contact(name=name, email=email, subject=subject,message=message)
+        if obj.is_valid():
+            cd = obj.cleaned_data
+            cd.save()
+        return redirect("contact")
+    return render(request, 'contact.html')
 
 def sports(request):
     page = news.objects.all()
